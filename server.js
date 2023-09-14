@@ -1,9 +1,7 @@
 import { fastify } from 'fastify';
-import { DatabaseMemory } from './database-memory.js';
 import { DatabasePostgres } from './database-postgres.js';
 
 const server = fastify();
-// const database = new DatabaseMemory()
 const database = new DatabasePostgres()
 
 server.post('/videos', async (request, reply) => {
